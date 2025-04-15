@@ -12,7 +12,7 @@ int User::getUserID() {
     return userID;
 }
 string User::getName() const {
-    return name;
+    return username;
 }
 
 string User::getEmail() const {
@@ -20,5 +20,5 @@ string User::getEmail() const {
 }
 
 int User::getID() const {
-    return id;
+    return userID;
 }
