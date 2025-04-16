@@ -22,14 +22,14 @@ private:
     SupportList<int> supporterIDs;
 
 public:
-    RoadReport(int id, string location, string description, Severity severity, string date);
+    RoadReport(int reportID, int reporterID, string location, string description, Severity severity, string date);
     void addSupport(int userID);
     void displayReport() const;
     int getSupportCount() const { return supportCount; }
     int getReporterID() const { return reporterID; }
+    int getReportID() const { return reportID; } 
     Severity getSeverity() const { return severity; }
     ~RoadReport() {}
-
 };
 
 #endif
