@@ -74,7 +74,10 @@ int main() {
                 Severity severity = static_cast<Severity>(severityInt);
                 auto regUser = dynamic_pointer_cast<RegularUser>(currentUser);
                 if (regUser) {
+                    int reportID = manager.generateNewReportID(); // Generate unique reportID
                     RoadReport report = regUser->createReport(location, description, severity);
+                    // Reconstruct report with correct reportID
+                    report = RoadReport(reportID, regUser->getUserID(), location, description, severity, getCurrentDate());
                     manager.addReport(report);
                 } else {
                     cout << "Only regular users can create reports.\n";
@@ -89,7 +92,12 @@ int main() {
 
                 auto regUser = dynamic_pointer_cast<RegularUser>(currentUser);
                 if (regUser) {
-                    regUser->supportReport(reportID); // You may want to link this to manager in future
+                    RoadReport* report = manager.getReportByID(reportID);
+                    if (report) {
+                        report->addSupport(regUser->getUserID());
+                    } else {
+                        cout << "Report ID " << reportID << " not found.\n";
+                    }
                 } else {
                     cout << "Only regular users can support reports.\n";
                 }
