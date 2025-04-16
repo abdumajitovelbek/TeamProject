@@ -16,7 +16,6 @@ add_executable(RoadDamageReportingSystem main.cpp
         RegularUser.cpp
         RoadReport.cpp
         ReportManager.cpp
-        SupportList.cpp
         UserManager.cpp
         UserManager.h
         Utils.cpp
