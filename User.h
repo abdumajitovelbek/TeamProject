@@ -14,15 +14,14 @@ protected:
 
 public:
     User(string name, int id, string email);
-    string getUsername();
-    int getUserID();
+    string getUsername() const;  
+    int getUserID() const;   
     virtual void displayInfo() = 0;
     virtual string getName() const = 0;
     virtual string getEmail() const = 0;
     virtual int getID() const = 0;
-    string getEmail() { return email; }
+    string getEmail() { return email; } 
     virtual ~User() {}
-
 };
 
 #endif
