@@ -1,10 +1,11 @@
 //RoadReport.cpp
+
 #include "RoadReport.h"
 #include <iostream>
 
-RoadReport::RoadReport(int id, string loc, string desc, Severity sev, string date)
-    : reportID(id), location(loc), description(desc), severity(sev), dateReported(date),
-      status("Pending"), supportCount(0), reporterID(id) {}
+RoadReport::RoadReport(int reportID, int reporterID, string loc, string desc, Severity sev, string date)
+    : reportID(reportID), location(loc), description(desc), severity(sev), dateReported(date),
+      status("Pending"), supportCount(0), reporterID(reporterID) {}
 
 void RoadReport::addSupport(int userID) {
     if (!supporterIDs.contains(userID)) {
@@ -27,7 +28,6 @@ string severityToString(Severity sev) {
 
 void RoadReport::displayReport() const {
     cout << "Report ID: " << reportID << "\nLocation: " << location << "\nDescription: " << description
-         << "\nSeverity: " << severity << "\nDate: " << dateReported
+         << "\nSeverity: " << severityToString(severity) << "\nDate: " << dateReported
          << "\nStatus: " << status << "\nSupports: " << supportCount << endl;
-    cout << "Severity: " << severityToString(severity) << endl;
 }
