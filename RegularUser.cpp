@@ -23,9 +23,9 @@ int RegularUser::getID() const {
 }
 
 RoadReport RegularUser::createReport(string location, string description, Severity severity) {
-    return RoadReport(0, userID, location, description, severity, getCurrentDate()); // reportID set in main.cpp
+    return RoadReport(0, userID, location, description, severity, getCurrentDate()); 
 }
 
 void RegularUser::supportReport(int reportID) {
-    cout << "User " << userID << " supported report ID " << reportID << endl; // Optional, can be removed
+    cout << "User " << userID << " supported report ID " << reportID << endl; 
 }
