@@ -4,13 +4,14 @@
 
 User::User(string name, int id, string mail) : username(name), userID(id), email(mail) {}
 
-string User::getUsername() {
+string User::getUsername() const {
     return username;
 }
 
-int User::getUserID() {
+int User::getUserID() const {
     return userID;
 }
+
 string User::getName() const {
     return username;
 }
