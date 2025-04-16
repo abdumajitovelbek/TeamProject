@@ -13,6 +13,9 @@ public:
     Admin(string name, int id, string email, ReportManager* mgr);
     virtual ~Admin() {}
     void displayInfo() override;
+    string getName() const override;  
+    string getEmail() const override; 
+    int getID() const override;        
     void viewAllReports();
     void filterReportsBySeverity(Severity level);
     void viewTopReports();
